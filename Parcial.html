@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Churrasquería El Sabor de la Abuela</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #BFBFBF; /* Color de fondo claro */
+            color: #403E3F; /* Color de texto más oscuro */
+        }
+
+        header {
+            background-color: #737272; /* Color de fondo del header */
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo img {
+            width: 150px;
+            height: auto;
+            max-width: 100%;
+            margin: 0 auto;
+            border: 10px solid #BFBFBF;
+            border-radius: 100px; 
+        }
+
+        .intro h2, .intro p {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .contenido {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #403E3F; /* Color de fondo para el contenido */
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        .carrusel {
+            position: relative;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+
+        .imagenes {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .imagen-con-texto {
+            position: relative;
+            min-width: 100%;
+        }
+
+        .imagen-con-texto img {
+            width: 100%;
+            height: 400px; /* Altura fija para mantener proporciones */
+            object-fit: cover; /* Mantiene la proporción de la imagen */
+            border: 5px solid #403E3F;
+            border-radius: 8px;
+        }
+
+        .texto-corte {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%); /* Centrar horizontalmente el texto */
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            padding: 5px;
+            border-radius: 5px;
+            font-size: 16px;
+            text-align: center; /* Asegura que el texto esté centrado */
+            width: 90%; /* Ancho del texto */
+        }
+
+        .btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.7);
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px; /* Bordes redondeados para botones */
+            z-index: 1; /* Asegura que los botones estén por encima */
+        }
+
+        #anterior {
+            left: 10px; /* Coloca el botón "anterior" en el lado izquierdo */
+        }
+
+        #siguiente {
+            right: 10px; /* Coloca el botón "siguiente" en el lado derecho */
+        }
+
+        .contenedor {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+
+        .fila {
+            background-color: #737272; /* Fondo de las filas */
+            border-radius: 20px;
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+            color: white; /* Color de texto en filas */
+            margin-bottom: 20px; /* Espacio entre filas */
+        }
+
+        .fila img {
+            max-width: 100%;
+            border-radius: 15px;
+        }
+
+        #anterior, #siguiente {
+            font-size: 20px; /* Tamaño de fuente de los botones */
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #403E3F; /* Fondo del pie de página */
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Churrasquería <br> El Sabor de la Abuela</h1>
+        <div class="logo">
+            <img src="https://static.vecteezy.com/system/resources/previews/036/040/189/non_2x/grandma-cooking-or-granny-cartoon-mascot-character-illustration-hand-drawn-illustration-vector.jpg" alt="logo">
+        </div>
+    </header>
+
+    <div class="contenido">
+        <div class="intro">
+            <h2 class="text-white">Bienvenidos a nuestra churrasquería</h2> <!-- Texto en blanco -->
+            <p class="text-white"> <!-- Texto en blanco -->
+                En el Sabor de la Abuela, te ofrecemos las mejores carnes a la parrilla, preparadas con
+                amor y pasión por el arte del asado. Nuestro menú incluye una variedad de cortes
+                premium, acompañados de deliciosas guarniciones y salsas caseras.
+            </p>
+            <p class="text-white"> <!-- Texto en blanco -->
+                Ven y disfruta de una experiencia gastronómica única en un ambiente acogedor y familiar.
+                ¡Te esperamos para compartir momentos inolvidables alrededor de la parrilla!
+            </p>
+        </div>
+
+        <!-- Carrusel de imágenes -->
+        <div class="carrusel">
+            <div class="imagenes" id="imagenes">
+                <div class="imagen-con-texto">
+                    <img src="https://hips.hearstapps.com/hmg-prod/images/carne-kobe-roja-cortes-ternera-esquire-solobuey-chuleta-1559218278.jpg?crop=1xw:1xh;center,top&resize=980:*" alt="chuleton" class="activo">
+                    <div class="texto-corte">Chuletón</div>
+                </div>
+                <div class="imagen-con-texto">
+                    <img src="https://hips.hearstapps.com/hmg-prod/images/carne-kobe-roja-cortes-ternera-esquire-tomahawk-1559219682.jpg?crop=1xw:1xh;center,top&resize=980:*" alt="tomahak">
+                    <div class="texto-corte">Tomahawk</div>
+                </div>
+                <div class="imagen-con-texto">
+                    <img src="https://hips.hearstapps.com/hmg-prod/images/carne-kobe-roja-cortes-ternera-esquire-new-york-steak-1559219679.jpg?crop=1xw:1xh;center,top&resize=980:*" alt="Ney-york">
+                    <div class="texto-corte">New York Steak</div>
+                </div>
+                <div class="imagen-con-texto">
+                    <img src="https://hips.hearstapps.com/hmg-prod/images/carne-kobe-roja-cortes-ternera-esquire-pican-a-1559219679.jpg?crop=1xw:1xh;center,top&resize=980:*" alt="picaña">
+                    <div class="texto-corte">Picaña</div>
+                </div>
+                <div class="imagen-con-texto">
+                    <img src="https://hips.hearstapps.com/hmg-prod/images/carne-kobe-roja-cortes-ternera-esquire-solobuey-entran-a-1559218278.jpg?crop=1xw:1xh;center,top&resize=980:*" alt="entraña">
+                    <div class="texto-corte">Entraña</div>
+                </div>
+                <div class="imagen-con-texto">
+                    <img src="https://www.poesiadefogon.com/wp-content/uploads/2021/03/carne-tomahawk-steak-750x500.jpg" alt="Tomahawk">
+                    <div class="texto-corte">Tomahawk Grande</div>
+                </div>
+            </div>
+            <button class="btn" id="anterior" onclick="cambiarImagen(-1)">❮</button>
+            <button class="btn" id="siguiente" onclick="cambiarImagen(1)">❯</button>
+        </div>
+    </div>
+
+    <div class="contenedor">
+        <div class="fila">
+            <h2>Picaña</h2>
+            <img src="https://hips.hearstapps.com/hmg-prod/images/carne-kobe-roja-cortes-ternera-esquire-pican-a-1559219679.jpg?crop=1xw:1xh;center,top&resize=980:*" alt="picaña">
+            <p>La picaña es un corte de carne muy sabroso, que se caracteriza por su forma triangular. <br>
+                Suele prepararse en forma de chuletas o en brochetas y es ideal para asados al aire libre.</p>
+                <h1> 75$</h1>
+        </div>
+        
+        <div class="fila">
+            <h2>New York Steak</h2>
+            <img src="https://hips.hearstapps.com/hmg-prod/images/carne-kobe-roja-cortes-ternera-esquire-new-york-steak-1559219679.jpg?crop=1xw:1xh;center,top&resize=980:*" alt="Ney-york">
+            <p>El New York steak, también conocido como "strip steak" o "sirloin strip," es un corte de carne que proviene de la parte baja de la res. <br>
+                Se destaca por su textura tierna y su sabor robusto. <br>
+                Es un corte popular para asar, ya que se cocina rápidamente y es muy sabroso.</p>
+                <h1> 92$</h1>
+        </div>
+
+        <div class="fila">
+            <h2>Chuletón</h2>
+            <img src="https://hips.hearstapps.com/hmg-prod/images/carne-kobe-roja-cortes-ternera-esquire-solobuey-chuleta-1559218278.jpg?crop=1xw:1xh;center,top&resize=980:*" alt="chuleton">
+            <p>El chuletón es un corte de carne grande y jugoso, que se obtiene del lomo de la res. <br>
+                Es ideal para aquellos que disfrutan de un buen asado, y se puede cocinar a la parrilla o al horno. <br>
+                La combinación de su grosor y la grasa intermuscular lo hacen extremadamente sabroso.</p>
+                <h1> 50$</h1>
+        </div>
+
+        <div class="fila">
+            <h2>Entraña</h2>
+            <img src="https://hips.hearstapps.com/hmg-prod/images/carne-kobe-roja-cortes-ternera-esquire-solobuey-entran-a-1559218278.jpg?crop=1xw:1xh;center,top&resize=980:*" alt="entraña">
+            <p>La entraña es un corte de carne que proviene del diafragma de la res. <br>
+                Es conocido por su sabor intenso y su textura suave. <br>
+                Se suele cocinar a la parrilla y es ideal para disfrutar en un buen asado.</p>
+                <h1> 65$</h1>
+        </div>
+    </div>
+
+    <footer>
+        <p class="Copyr">&copy; 2024 HERBAS. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        let indiceImagen = 0;
+
+        function cambiarImagen(direccion) {
+            const imagenes = document.getElementById('imagenes');
+            const totalImagenes = imagenes.children.length;
+
+            indiceImagen = (indiceImagen + direccion + totalImagenes) % totalImagenes;
+            imagenes.style.transform = 'translateX(-' + (indiceImagen * 100) + '%)';
+        }
+    </script>
+</body>
+</html>
