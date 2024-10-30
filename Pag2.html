@@ -12,7 +12,6 @@
             height: 100%;
             font-family: 'Montserrat', sans-serif;
             background-color: #BFBFBF; /* Color de fondo más claro */
-            line-height: 1.6;
         }
 
         #Servicios1 {
@@ -30,8 +29,8 @@
             margin-bottom: 20px;
             background-color: #403E3F; /* Color de fondo del título */
             color: #F0F0F0; /* Color del texto del título */
-            padding: 15px; /* Espaciado dentro del título */
-            border-radius: 10px; /* Bordes redondeados para un acabado elegante */
+            padding: 15px;
+            border-radius: 10px;
         }
 
         .paquetes {
@@ -45,21 +44,21 @@
         .paquete {
             margin: 10px;
             padding: 25px;
-            background-color: rgb(221, 221, 221); /* Fondo del paquete */
+            background-color: rgb(221, 221, 221);
             border-radius: 40px;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-            box-shadow: 0 4px 12px rgb(0, 0, 0); /* Sombra elegante */
-            transition: transform 0.2s; /* Efecto de transformación al pasar el ratón */
+            align-items: center;
+            text-align: center;
+            box-shadow: 0 4px 12px rgb(0, 0, 0);
+            transition: transform 0.2s;
         }
 
         .paquete:hover {
-            transform: translateY(-5px); /* Efecto de elevación al pasar el ratón */
+            transform: translateY(-5px);
         }
 
         .img-cont {
-            text-align: center;
             margin-bottom: 15px;
         }
 
@@ -72,18 +71,20 @@
         .precio {
             margin-top: 15px;
             font-size: 24px;
-            color: #403E3F; /* Color del precio */
+            color: #403E3F;
         }
 
-        .paquete p {
-            color: #737272; /* Color más oscuro para el texto de las tarjetas */
+        .paquete ul {
+            padding: 0;
+            list-style: none;
+            color: #737272;
         }
 
         footer {
             text-align: center;
             padding: 20px 0;
-            color: #403E3F; /* Color del pie de página */
-            position: relative; /* Asegura que el pie de página no esté sobre otros elementos */
+            color: #403E3F;
+            position: relative;
             bottom: 0;
             width: 100%;
         }
@@ -91,9 +92,37 @@
         .Copyr {
             margin: 0;
         }
+        .nav-link {
+            transition: transform 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            transform: scale(1.1);
+        }
     </style>
 </head>
 <body>
+    <header class="bg-dark py-3">
+        <div class="container d-flex justify-content-between align-items-center">
+            <h1 class="text-white mb-0">HERBAS</h1>
+            <nav>
+                <ul class="nav">
+                    <li class="nav-item"> 
+                        <a class="nav-link text-white" href="index.html">
+                            <img src="https://t3.ftcdn.net/jpg/06/90/99/14/360_F_690991487_DxPr6XooHnzJ530dkWXnSQMs8E7Sw3qj.jpg" 
+                                 alt="Descripción de la imagen" 
+                                 class="rounded-circle" 
+                                 style="width:25px; height:25px;">
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item"><a class="nav-link text-white" href="Pag2.html" target="_blank">Servicios</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="Pag3.html" target="_blank">Contactos</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="Parcial.html" target="_blank">Parcial</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
     <section id="Servicios1">
         <div>
             <div class="precios-top">
@@ -102,9 +131,11 @@
             <div class="paquetes">
                 <div class="paquete Junior">
                     <h2><strong>PAQUETE JUNIOR</strong></h2>
-                    <p><strong>- Ideal</strong> para pequeñas empresas que inician su camino digital.<br>
-                        <strong>- Incluye</strong> un software básico a medida con funciones esenciales.<br>
-                        <strong>- Soporte</strong> técnico limitado (1 mes).</p>
+                    <ul>
+                        <li><strong>Ideal</strong> para pequeñas empresas que inician su camino digital.</li>
+                        <li><strong>Incluye</strong> un software básico a medida con funciones esenciales.</li>
+                        <li><strong>Soporte</strong> técnico limitado (1 mes).</li>
+                    </ul>
                     <div class="img-cont">
                         <img src="https://github.com/H3RBASS/imagenes/blob/main/4%20-%20rn3IblW.jpg?raw=true" class="img-precio" alt="Paquete Junior">
                     </div>
@@ -113,9 +144,11 @@
 
                 <div class="paquete Basico">
                     <h2><strong>PAQUETE BÁSICO</strong></h2>
-                    <p><strong>- Perfecto</strong> para empresas en crecimiento que necesitan más funcionalidades.<br>
-                        <strong>- Incluye</strong> un software personalizado con hasta 5 módulos y funcionalidades avanzadas.<br>
-                        <strong>- Soporte</strong> técnico (3 meses) y una sesión de capacitación.</p>
+                    <ul>
+                        <li><strong>Perfecto</strong> para empresas en crecimiento que necesitan más funcionalidades.</li>
+                        <li><strong>Incluye</strong> un software personalizado con hasta 5 módulos y funcionalidades avanzadas.</li>
+                        <li><strong>Soporte</strong> técnico (3 meses) y una sesión de capacitación.</li>
+                    </ul>
                     <div class="img-cont">
                         <img src="https://github.com/H3RBASS/imagenes/blob/main/5%20-%20ASVwSjj.jpg?raw=true" class="img-precio" alt="Paquete Básico">
                     </div>
@@ -124,9 +157,11 @@
 
                 <div class="paquete Master">
                     <h2><strong>PAQUETE MASTER</strong></h2>
-                    <p><strong>- Diseñado</strong> para grandes empresas con necesidades complejas.<br>
-                        <strong>- Incluye</strong> un software a medida con múltiples módulos, integración con APIs y funcionalidades avanzadas.<br>
-                        <strong>- Soporte</strong> técnico prioritario (6 meses), capacitación personalizada y actualizaciones semestrales.</p>
+                    <ul>
+                        <li><strong>Diseñado</strong> para grandes empresas con necesidades complejas.</li>
+                        <li><strong>Incluye</strong> un software a medida con múltiples módulos, integración con APIs y funcionalidades avanzadas.</li>
+                        <li><strong>Soporte</strong> técnico prioritario (6 meses), capacitación personalizada y actualizaciones semestrales.</li>
+                    </ul>
                     <div class="img-cont">
                         <img src="https://github.com/H3RBASS/imagenes/blob/main/6%20-%20KEdMRRd.jpg?raw=true" class="img-precio" alt="Paquete Master">
                     </div>

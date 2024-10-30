@@ -149,10 +149,43 @@
             bottom: 0;
             width: 100%;
         }
+        .nav-link {
+            transition: transform 0.3s ease; /* Suaviza la transición */
+        }
+        
+        .nav-link:hover {
+            transform: scale(1.1); /* Aumenta el tamaño al pasar el cursor */
+        }
+        body, html {
+            margin: 0;
+            height: 100%;
+            font-family: 'Montserrat', sans-serif;
+            background-color: #BFBFBF; /* Color de fondo más claro */
+        }
     </style>
 </head>
 <body>
+    
     <header>
+        <div class="container d-flex justify-content-between align-items-center">
+            <h1 class="text-white mb-0">HERBAS</h1>
+            <nav>
+                <ul class="nav">
+                    <li class="nav-item"> 
+                        <a class="nav-link text-white" href="index.html">
+                            <img src="https://t3.ftcdn.net/jpg/06/90/99/14/360_F_690991487_DxPr6XooHnzJ530dkWXnSQMs8E7Sw3qj.jpg" 
+                                 alt="Descripción de la imagen" 
+                                 class="rounded-circle" 
+                                 style="width:25px; height:25px;">
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item"><a class="nav-link text-white" href="Pag2.html" target="_blank">Servicios</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="Pag3.html" target="_blank">Contactos</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="Parcial.html" target="_blank">Parcial</a></li>
+                </ul>
+            </nav>
+        </div>
         <h1>Churrasquería <br> El Sabor de la Abuela</h1>
         <div class="logo">
             <img src="https://static.vecteezy.com/system/resources/previews/036/040/189/non_2x/grandma-cooking-or-granny-cartoon-mascot-character-illustration-hand-drawn-illustration-vector.jpg" alt="logo">
